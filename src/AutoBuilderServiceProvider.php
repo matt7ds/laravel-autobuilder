@@ -23,7 +23,7 @@ class AutoBuilderServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/autobuilder.php', 'autobuilder');
+        $this->mergeConfigFrom(__DIR__.'/../config/autobuilder.php', 'autobuilder');
 
         $this->app->singleton(BrickRegistry::class, function ($app) {
             return new BrickRegistry($app);
@@ -62,30 +62,30 @@ class AutoBuilderServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
             // Config
             $this->publishes([
-                __DIR__ . '/../config/autobuilder.php' => config_path('autobuilder.php'),
+                __DIR__.'/../config/autobuilder.php' => config_path('autobuilder.php'),
             ], 'autobuilder-config');
 
             // Migrations
             $this->publishes([
-                __DIR__ . '/../database/migrations' => database_path('migrations'),
+                __DIR__.'/../database/migrations' => database_path('migrations'),
             ], 'autobuilder-migrations');
 
             // Views
             $this->publishes([
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/autobuilder'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/autobuilder'),
             ], 'autobuilder-views');
 
             // Compiled Assets (JS/CSS)
             $this->publishes([
-                __DIR__ . '/../resources/dist' => public_path('vendor/autobuilder'),
+                __DIR__.'/../resources/dist' => public_path('vendor/autobuilder'),
             ], 'autobuilder-assets');
 
             // All assets
             $this->publishes([
-                __DIR__ . '/../config/autobuilder.php' => config_path('autobuilder.php'),
-                __DIR__ . '/../database/migrations' => database_path('migrations'),
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/autobuilder'),
-                __DIR__ . '/../resources/dist' => public_path('vendor/autobuilder'),
+                __DIR__.'/../config/autobuilder.php' => config_path('autobuilder.php'),
+                __DIR__.'/../database/migrations' => database_path('migrations'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/autobuilder'),
+                __DIR__.'/../resources/dist' => public_path('vendor/autobuilder'),
             ], 'autobuilder');
         }
     }
@@ -105,18 +105,18 @@ class AutoBuilderServiceProvider extends ServiceProvider
     protected function registerRoutes(): void
     {
         if (config('autobuilder.routes.enabled', true)) {
-            $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+            $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         }
     }
 
     protected function registerMigrations(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     protected function registerViews(): void
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'autobuilder');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'autobuilder');
     }
 
     protected function discoverBricks(): void

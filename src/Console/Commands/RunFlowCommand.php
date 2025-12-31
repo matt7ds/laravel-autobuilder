@@ -40,11 +40,11 @@ class RunFlowCommand extends Command
         if ($result->isCompleted()) {
             $this->info('Flow completed successfully!');
         } elseif ($result->isFailed()) {
-            $this->error('Flow failed: ' . $result->error?->getMessage());
+            $this->error('Flow failed: '.$result->error?->getMessage());
 
             return self::FAILURE;
         } elseif ($result->isPaused()) {
-            $this->warn('Flow paused. Run ID: ' . $result->context->runId);
+            $this->warn('Flow paused. Run ID: '.$result->context->runId);
         }
 
         // Show logs

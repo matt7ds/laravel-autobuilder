@@ -14,7 +14,7 @@ beforeEach(function () {
 });
 
 it('has correct metadata', function () {
-    $condition = new FieldContains();
+    $condition = new FieldContains;
 
     expect($condition->name())->toBe('Field Contains');
     expect($condition->type())->toBe('condition');
@@ -22,7 +22,7 @@ it('has correct metadata', function () {
 });
 
 it('returns true when string contains value', function () {
-    $condition = new FieldContains();
+    $condition = new FieldContains;
     $condition->configure([
         'field' => 'message',
         'needle' => 'World',
@@ -33,7 +33,7 @@ it('returns true when string contains value', function () {
 });
 
 it('returns false when string does not contain value', function () {
-    $condition = new FieldContains();
+    $condition = new FieldContains;
     $condition->configure([
         'field' => 'message',
         'needle' => 'Goodbye',
@@ -44,7 +44,7 @@ it('returns false when string does not contain value', function () {
 });
 
 it('supports case insensitive search', function () {
-    $condition = new FieldContains();
+    $condition = new FieldContains;
     $condition->configure([
         'field' => 'message',
         'needle' => 'world', // lowercase
@@ -55,7 +55,7 @@ it('supports case insensitive search', function () {
 });
 
 it('returns true when string contains value in email', function () {
-    $condition = new FieldContains();
+    $condition = new FieldContains;
     $condition->configure([
         'field' => 'email',
         'needle' => 'example',
@@ -66,7 +66,7 @@ it('returns true when string contains value in email', function () {
 });
 
 it('returns false when string does not contain needle', function () {
-    $condition = new FieldContains();
+    $condition = new FieldContains;
     $condition->configure([
         'field' => 'email',
         'needle' => 'gmail',

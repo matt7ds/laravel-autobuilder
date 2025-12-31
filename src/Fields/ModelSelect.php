@@ -44,7 +44,7 @@ class ModelSelect extends Field
 
             foreach ($files as $file) {
                 $namespace = 'App\\Models\\';
-                $className = $namespace . str_replace(
+                $className = $namespace.str_replace(
                     ['/', '.php'],
                     ['\\', ''],
                     $file->getRelativePathname()

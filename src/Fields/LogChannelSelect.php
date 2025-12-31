@@ -35,7 +35,7 @@ class LogChannelSelect extends Field
 
         foreach ($configuredChannels as $name => $config) {
             $driver = $config['driver'] ?? 'unknown';
-            $channels[$name] = ucfirst($name) . " ({$driver})";
+            $channels[$name] = ucfirst($name)." ({$driver})";
         }
 
         return $channels;

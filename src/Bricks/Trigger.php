@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Grazulex\AutoBuilder\Bricks;
 
-use Grazulex\AutoBuilder\Flow\FlowContext;
-
 abstract class Trigger extends Brick
 {
     protected ?string $flowId = null;

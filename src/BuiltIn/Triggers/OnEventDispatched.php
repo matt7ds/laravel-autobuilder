@@ -79,7 +79,7 @@ class OnEventDispatched extends Trigger
                     $file->getRelativePathname()
                 );
 
-                $class = 'App\\Events\\' . $relativePath;
+                $class = 'App\\Events\\'.$relativePath;
 
                 if (class_exists($class)) {
                     $events[$class] = class_basename($class);

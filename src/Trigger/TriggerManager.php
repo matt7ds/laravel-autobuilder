@@ -13,6 +13,7 @@ class TriggerManager
 {
     /**
      * Registered triggers indexed by flow ID
+     *
      * @var array<string, Trigger>
      */
     protected array $registeredTriggers = [];
@@ -45,6 +46,7 @@ class TriggerManager
 
         if (! $triggerNode) {
             Log::warning("[AutoBuilder] Flow {$flow->id} has no trigger node");
+
             return;
         }
 
@@ -54,6 +56,7 @@ class TriggerManager
 
         if (! $brickClass) {
             Log::warning("[AutoBuilder] Flow {$flow->id} trigger node has no brick class");
+
             return;
         }
 
@@ -63,6 +66,7 @@ class TriggerManager
 
             if (! $trigger instanceof Trigger) {
                 Log::warning("[AutoBuilder] Flow {$flow->id} brick {$brickClass} is not a Trigger");
+
                 return;
             }
 
@@ -110,6 +114,7 @@ class TriggerManager
 
     /**
      * Get all registered triggers
+     *
      * @return array<string, Trigger>
      */
     public function getRegisteredTriggers(): array

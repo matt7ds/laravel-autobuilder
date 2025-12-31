@@ -69,7 +69,7 @@ class Flow extends Model
     public function duplicate(): static
     {
         $clone = $this->replicate();
-        $clone->name = $this->name . ' (Copy)';
+        $clone->name = $this->name.' (Copy)';
         $clone->active = false;
         $clone->webhook_path = null;
         $clone->save();

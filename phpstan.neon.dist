@@ -1,0 +1,19 @@
+parameters:
+    paths:
+        - src
+
+    level: 4
+
+    treatPhpDocTypesAsCertain: false
+
+    ignoreErrors:
+        - '#Access to an undefined property#'
+        - '#Call to an undefined method#'
+        - '#Call to an undefined static method#'
+        - '#Unsafe usage of new static#'
+        - '#If condition is always#'
+        - '#invoked with \d+ parameters, \d+ required#'
+        - '#Match expression does not handle remaining value#'
+
+    excludePaths:
+        - src/Console/Commands/stubs

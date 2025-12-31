@@ -12,7 +12,7 @@ beforeEach(function () {
 });
 
 it('has correct metadata', function () {
-    $action = new StopFlow();
+    $action = new StopFlow;
 
     expect($action->name())->toBe('Stop Flow');
     expect($action->type())->toBe('action');
@@ -21,7 +21,7 @@ it('has correct metadata', function () {
 });
 
 it('marks flow as stopped with complete status', function () {
-    $action = new StopFlow();
+    $action = new StopFlow;
     $action->configure([
         'stop_type' => 'complete',
         'reason' => 'All done',
@@ -35,7 +35,7 @@ it('marks flow as stopped with complete status', function () {
 });
 
 it('marks flow as stopped with fail status', function () {
-    $action = new StopFlow();
+    $action = new StopFlow;
     $action->configure([
         'stop_type' => 'fail',
         'reason' => 'Validation failed',
@@ -47,7 +47,7 @@ it('marks flow as stopped with fail status', function () {
 });
 
 it('marks flow as cancelled', function () {
-    $action = new StopFlow();
+    $action = new StopFlow;
     $action->configure([
         'stop_type' => 'cancel',
         'reason' => 'User cancelled',
@@ -59,7 +59,7 @@ it('marks flow as cancelled', function () {
 });
 
 it('stores final output from specified variable', function () {
-    $action = new StopFlow();
+    $action = new StopFlow;
     $action->configure([
         'stop_type' => 'complete',
         'output_variable' => 'result',
@@ -71,7 +71,7 @@ it('stores final output from specified variable', function () {
 });
 
 it('logs appropriate message based on stop type', function () {
-    $action = new StopFlow();
+    $action = new StopFlow;
     $action->configure([
         'stop_type' => 'fail',
         'reason' => 'Error occurred',
@@ -84,7 +84,7 @@ it('logs appropriate message based on stop type', function () {
 });
 
 it('has fields configuration', function () {
-    $action = new StopFlow();
+    $action = new StopFlow;
     $fields = $action->fields();
 
     expect($fields)->not->toBeEmpty();

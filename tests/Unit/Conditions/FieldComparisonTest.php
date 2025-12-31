@@ -23,7 +23,7 @@ beforeEach(function () {
 
 describe('FieldGreaterThan', function () {
     it('returns true when field is greater than value', function () {
-        $condition = new FieldGreaterThan();
+        $condition = new FieldGreaterThan;
         $condition->configure([
             'field' => 'amount',
             'value' => 50,
@@ -34,7 +34,7 @@ describe('FieldGreaterThan', function () {
     });
 
     it('returns false when field is not greater than value', function () {
-        $condition = new FieldGreaterThan();
+        $condition = new FieldGreaterThan;
         $condition->configure([
             'field' => 'amount',
             'value' => 150,
@@ -45,7 +45,7 @@ describe('FieldGreaterThan', function () {
     });
 
     it('supports greater than or equal operator', function () {
-        $condition = new FieldGreaterThan();
+        $condition = new FieldGreaterThan;
         $condition->configure([
             'field' => 'amount',
             'value' => 100,
@@ -58,7 +58,7 @@ describe('FieldGreaterThan', function () {
 
 describe('FieldLessThan', function () {
     it('returns true when field is less than value', function () {
-        $condition = new FieldLessThan();
+        $condition = new FieldLessThan;
         $condition->configure([
             'field' => 'price',
             'value' => 100,
@@ -69,7 +69,7 @@ describe('FieldLessThan', function () {
     });
 
     it('supports less than or equal operator', function () {
-        $condition = new FieldLessThan();
+        $condition = new FieldLessThan;
         $condition->configure([
             'field' => 'price',
             'value' => 49.99,
@@ -82,7 +82,7 @@ describe('FieldLessThan', function () {
 
 describe('FieldIsEmpty', function () {
     it('returns true when field is empty string', function () {
-        $condition = new FieldIsEmpty();
+        $condition = new FieldIsEmpty;
         $condition->configure([
             'field' => 'empty_string',
             'invert' => false,
@@ -92,7 +92,7 @@ describe('FieldIsEmpty', function () {
     });
 
     it('returns true when field is null', function () {
-        $condition = new FieldIsEmpty();
+        $condition = new FieldIsEmpty;
         $condition->configure([
             'field' => 'null_value',
             'invert' => false,
@@ -102,7 +102,7 @@ describe('FieldIsEmpty', function () {
     });
 
     it('returns false when field has value', function () {
-        $condition = new FieldIsEmpty();
+        $condition = new FieldIsEmpty;
         $condition->configure([
             'field' => 'status',
             'invert' => false,
@@ -112,7 +112,7 @@ describe('FieldIsEmpty', function () {
     });
 
     it('can invert the check (is not empty)', function () {
-        $condition = new FieldIsEmpty();
+        $condition = new FieldIsEmpty;
         $condition->configure([
             'field' => 'status',
             'invert' => true,
@@ -124,7 +124,7 @@ describe('FieldIsEmpty', function () {
 
 describe('FieldMatchesRegex', function () {
     it('returns true when field matches pattern', function () {
-        $condition = new FieldMatchesRegex();
+        $condition = new FieldMatchesRegex;
         $condition->configure([
             'field' => 'email',
             'pattern' => '/^[\w\.-]+@[\w\.-]+\.\w+$/',
@@ -134,7 +134,7 @@ describe('FieldMatchesRegex', function () {
     });
 
     it('returns false when field does not match pattern', function () {
-        $condition = new FieldMatchesRegex();
+        $condition = new FieldMatchesRegex;
         $condition->configure([
             'field' => 'email',
             'pattern' => '/^[0-9]+$/',
@@ -146,7 +146,7 @@ describe('FieldMatchesRegex', function () {
 
 describe('FieldNotEquals', function () {
     it('returns true when field does not equal value', function () {
-        $condition = new FieldNotEquals();
+        $condition = new FieldNotEquals;
         $condition->configure([
             'field' => 'status',
             'value' => 'inactive',
@@ -157,7 +157,7 @@ describe('FieldNotEquals', function () {
     });
 
     it('returns false when field equals value', function () {
-        $condition = new FieldNotEquals();
+        $condition = new FieldNotEquals;
         $condition->configure([
             'field' => 'status',
             'value' => 'active',

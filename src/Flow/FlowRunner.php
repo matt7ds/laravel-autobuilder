@@ -114,7 +114,7 @@ class FlowRunner
     protected function executeNode(array $node): void
     {
         // Prevent infinite loops
-        $nodeExecutionKey = $node['id'] . '_' . count($this->executedNodes);
+        $nodeExecutionKey = $node['id'].'_'.count($this->executedNodes);
         if (in_array($node['id'], $this->executedNodes) && count($this->executedNodes) > config('autobuilder.execution.max_nodes', 100)) {
             $this->context->warning("Max node execution limit reached: {$node['id']}");
 
@@ -163,7 +163,7 @@ class FlowRunner
     protected function executeCondition(array $node, Condition $condition): void
     {
         $result = $condition->evaluate($this->context);
-        $this->context->info("Condition '{$condition->name()}' = " . ($result ? 'true' : 'false'));
+        $this->context->info("Condition '{$condition->name()}' = ".($result ? 'true' : 'false'));
 
         // Find outgoing edges
         $edges = $this->getOutgoingEdges($node['id']);
@@ -225,7 +225,7 @@ class FlowRunner
 
         // Evaluate the gate
         $result = $gate->evaluate($inputs, $this->context);
-        $this->context->info("Gate '{$gate->name()}' = " . ($result ? 'PASS' : 'FAIL'));
+        $this->context->info("Gate '{$gate->name()}' = ".($result ? 'PASS' : 'FAIL'));
 
         // Clear gate inputs after evaluation
         $this->context->clearGateInputs($node['id']);

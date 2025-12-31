@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Grazulex\AutoBuilder\Bricks;
 
-use Grazulex\AutoBuilder\Flow\FlowContext;
 use Grazulex\AutoBuilder\Traits\RendersVariables;
 
 abstract class Brick

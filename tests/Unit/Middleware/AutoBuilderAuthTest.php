@@ -12,7 +12,7 @@ beforeEach(function () {
 });
 
 it('rejects unauthenticated users with JSON response', function () {
-    $middleware = new AutoBuilderAuth();
+    $middleware = new AutoBuilderAuth;
     $request = Request::create('/autobuilder/api/flows', 'GET');
     $request->headers->set('Accept', 'application/json');
 
@@ -23,7 +23,7 @@ it('rejects unauthenticated users with JSON response', function () {
 });
 
 it('allows authenticated users through', function () {
-    $middleware = new AutoBuilderAuth();
+    $middleware = new AutoBuilderAuth;
     $request = Request::create('/autobuilder/api/flows', 'GET');
 
     // Create a mock user
@@ -41,7 +41,7 @@ it('allows authenticated users through', function () {
 it('allows super admins through', function () {
     config(['autobuilder.authorization.super_admins' => [1]]);
 
-    $middleware = new AutoBuilderAuth();
+    $middleware = new AutoBuilderAuth;
     $request = Request::create('/autobuilder/api/flows', 'GET');
 
     $user = new class
@@ -59,7 +59,7 @@ it('allows super admins through', function () {
 });
 
 it('denies access when gate fails', function () {
-    $middleware = new AutoBuilderAuth();
+    $middleware = new AutoBuilderAuth;
     $request = Request::create('/autobuilder/api/flows', 'GET');
     $request->headers->set('Accept', 'application/json');
 
@@ -78,7 +78,7 @@ it('denies access when gate fails', function () {
 });
 
 it('allows access when gate passes', function () {
-    $middleware = new AutoBuilderAuth();
+    $middleware = new AutoBuilderAuth;
     $request = Request::create('/autobuilder/api/flows', 'GET');
 
     $user = new class
@@ -98,7 +98,7 @@ it('allows access when gate passes', function () {
 it('skips gate check when gate is null', function () {
     config(['autobuilder.authorization.gate' => null]);
 
-    $middleware = new AutoBuilderAuth();
+    $middleware = new AutoBuilderAuth;
     $request = Request::create('/autobuilder/api/flows', 'GET');
 
     $user = new class

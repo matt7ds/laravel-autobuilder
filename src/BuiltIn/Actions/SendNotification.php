@@ -102,7 +102,7 @@ class SendNotification extends Action
                 ->notify($notification);
         }
 
-        $context->log('info', "Notification sent via: ".implode(', ', $channels));
+        $context->log('info', 'Notification sent via: '.implode(', ', $channels));
 
         return $context;
     }

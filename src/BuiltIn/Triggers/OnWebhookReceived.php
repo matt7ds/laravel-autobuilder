@@ -65,7 +65,7 @@ class OnWebhookReceived extends Trigger
 
     public function getWebhookUrl(): string
     {
-        return url('/autobuilder/webhook/' . $this->config('path'));
+        return url('/autobuilder/webhook/'.$this->config('path'));
     }
 
     public function samplePayload(): array

@@ -31,11 +31,13 @@ class TriggerDispatchedListener implements ShouldQueue
 
         if (! $flow) {
             Log::warning("[AutoBuilder] Flow {$event->flowId} not found");
+
             return;
         }
 
         if (! $flow->active) {
             Log::info("[AutoBuilder] Flow {$event->flowId} is not active, skipping");
+
             return;
         }
 

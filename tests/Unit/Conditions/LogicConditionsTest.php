@@ -16,7 +16,7 @@ beforeEach(function () {
 
 describe('AndCondition', function () {
     it('has correct metadata', function () {
-        $condition = new AndCondition();
+        $condition = new AndCondition;
 
         expect($condition->name())->toBe('AND Condition');
         expect($condition->category())->toBe('Logic');
@@ -24,7 +24,7 @@ describe('AndCondition', function () {
     });
 
     it('returns true when all conditions match', function () {
-        $condition = new AndCondition();
+        $condition = new AndCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'active',
@@ -36,7 +36,7 @@ describe('AndCondition', function () {
     });
 
     it('returns false when first condition fails', function () {
-        $condition = new AndCondition();
+        $condition = new AndCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'inactive',
@@ -48,7 +48,7 @@ describe('AndCondition', function () {
     });
 
     it('returns false when second condition fails', function () {
-        $condition = new AndCondition();
+        $condition = new AndCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'active',
@@ -60,7 +60,7 @@ describe('AndCondition', function () {
     });
 
     it('supports optional third condition', function () {
-        $condition = new AndCondition();
+        $condition = new AndCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'active',
@@ -74,7 +74,7 @@ describe('AndCondition', function () {
     });
 
     it('returns false when third condition fails', function () {
-        $condition = new AndCondition();
+        $condition = new AndCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'active',
@@ -88,7 +88,7 @@ describe('AndCondition', function () {
     });
 
     it('has correct labels', function () {
-        $condition = new AndCondition();
+        $condition = new AndCondition;
 
         expect($condition->onTrueLabel())->toBe('All Match');
         expect($condition->onFalseLabel())->toBe('Not All Match');
@@ -97,7 +97,7 @@ describe('AndCondition', function () {
 
 describe('OrCondition', function () {
     it('has correct metadata', function () {
-        $condition = new OrCondition();
+        $condition = new OrCondition;
 
         expect($condition->name())->toBe('OR Condition');
         expect($condition->category())->toBe('Logic');
@@ -105,7 +105,7 @@ describe('OrCondition', function () {
     });
 
     it('returns true when first condition matches', function () {
-        $condition = new OrCondition();
+        $condition = new OrCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'active',
@@ -117,7 +117,7 @@ describe('OrCondition', function () {
     });
 
     it('returns true when second condition matches', function () {
-        $condition = new OrCondition();
+        $condition = new OrCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'inactive',
@@ -129,7 +129,7 @@ describe('OrCondition', function () {
     });
 
     it('returns false when no conditions match', function () {
-        $condition = new OrCondition();
+        $condition = new OrCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'inactive',
@@ -141,7 +141,7 @@ describe('OrCondition', function () {
     });
 
     it('supports optional third condition', function () {
-        $condition = new OrCondition();
+        $condition = new OrCondition;
         $condition->configure([
             'field1' => 'status',
             'value1' => 'inactive',
@@ -155,7 +155,7 @@ describe('OrCondition', function () {
     });
 
     it('has correct labels', function () {
-        $condition = new OrCondition();
+        $condition = new OrCondition;
 
         expect($condition->onTrueLabel())->toBe('Any Match');
         expect($condition->onFalseLabel())->toBe('None Match');

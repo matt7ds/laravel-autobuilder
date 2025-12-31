@@ -13,7 +13,7 @@ use Grazulex\AutoBuilder\BuiltIn\Triggers\OnWebhookReceived;
 
 describe('OnModelCreated', function () {
     it('has correct metadata', function () {
-        $trigger = new OnModelCreated();
+        $trigger = new OnModelCreated;
 
         expect($trigger->name())->toBe('Model Created');
         expect($trigger->type())->toBe('trigger');
@@ -23,7 +23,7 @@ describe('OnModelCreated', function () {
     });
 
     it('has fields configuration', function () {
-        $trigger = new OnModelCreated();
+        $trigger = new OnModelCreated;
         $fields = $trigger->fields();
 
         expect($fields)->not->toBeEmpty();
@@ -34,7 +34,7 @@ describe('OnModelCreated', function () {
 
 describe('OnModelUpdated', function () {
     it('has correct metadata', function () {
-        $trigger = new OnModelUpdated();
+        $trigger = new OnModelUpdated;
 
         expect($trigger->name())->toBe('Model Updated');
         expect($trigger->type())->toBe('trigger');
@@ -43,7 +43,7 @@ describe('OnModelUpdated', function () {
     });
 
     it('has watch_fields option', function () {
-        $trigger = new OnModelUpdated();
+        $trigger = new OnModelUpdated;
         $fields = $trigger->fields();
 
         $fieldNames = array_map(fn ($f) => $f->toArray()['name'], $fields);
@@ -53,7 +53,7 @@ describe('OnModelUpdated', function () {
 
 describe('OnModelDeleted', function () {
     it('has correct metadata', function () {
-        $trigger = new OnModelDeleted();
+        $trigger = new OnModelDeleted;
 
         expect($trigger->name())->toBe('Model Deleted');
         expect($trigger->type())->toBe('trigger');
@@ -62,7 +62,7 @@ describe('OnModelDeleted', function () {
     });
 
     it('has include_soft_deletes option', function () {
-        $trigger = new OnModelDeleted();
+        $trigger = new OnModelDeleted;
         $fields = $trigger->fields();
 
         $fieldNames = array_map(fn ($f) => $f->toArray()['name'], $fields);
@@ -72,7 +72,7 @@ describe('OnModelDeleted', function () {
 
 describe('OnSchedule', function () {
     it('has correct metadata', function () {
-        $trigger = new OnSchedule();
+        $trigger = new OnSchedule;
 
         expect($trigger->name())->toBe('Scheduled');
         expect($trigger->type())->toBe('trigger');
@@ -81,7 +81,7 @@ describe('OnSchedule', function () {
     });
 
     it('has cron expression field', function () {
-        $trigger = new OnSchedule();
+        $trigger = new OnSchedule;
         $fields = $trigger->fields();
 
         $fieldNames = array_map(fn ($f) => $f->toArray()['name'], $fields);
@@ -91,7 +91,7 @@ describe('OnSchedule', function () {
 
 describe('OnWebhookReceived', function () {
     it('has correct metadata', function () {
-        $trigger = new OnWebhookReceived();
+        $trigger = new OnWebhookReceived;
 
         expect($trigger->name())->toBe('Webhook Received');
         expect($trigger->type())->toBe('trigger');
@@ -102,7 +102,7 @@ describe('OnWebhookReceived', function () {
 
 describe('OnEventDispatched', function () {
     it('has correct metadata', function () {
-        $trigger = new OnEventDispatched();
+        $trigger = new OnEventDispatched;
 
         expect($trigger->name())->toBe('Event Dispatched');
         expect($trigger->type())->toBe('trigger');
@@ -111,7 +111,7 @@ describe('OnEventDispatched', function () {
     });
 
     it('has event_class field', function () {
-        $trigger = new OnEventDispatched();
+        $trigger = new OnEventDispatched;
         $fields = $trigger->fields();
 
         $fieldNames = array_map(fn ($f) => $f->toArray()['name'], $fields);
@@ -121,7 +121,7 @@ describe('OnEventDispatched', function () {
 
 describe('OnQueueJobFailed', function () {
     it('has correct metadata', function () {
-        $trigger = new OnQueueJobFailed();
+        $trigger = new OnQueueJobFailed;
 
         expect($trigger->name())->toBe('Queue Job Failed');
         expect($trigger->type())->toBe('trigger');
@@ -132,7 +132,7 @@ describe('OnQueueJobFailed', function () {
 
 describe('OnManualTrigger', function () {
     it('has correct metadata', function () {
-        $trigger = new OnManualTrigger();
+        $trigger = new OnManualTrigger;
 
         expect($trigger->name())->toBe('Manual Trigger');
         expect($trigger->type())->toBe('trigger');

@@ -101,7 +101,7 @@ class OnQueueJobFailed extends Trigger
                     $file->getRelativePathname()
                 );
 
-                $class = 'App\\Jobs\\' . $relativePath;
+                $class = 'App\\Jobs\\'.$relativePath;
 
                 if (class_exists($class)) {
                     $jobs[$class] = class_basename($class);

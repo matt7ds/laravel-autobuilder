@@ -13,7 +13,7 @@ beforeEach(function () {
 });
 
 it('has correct metadata', function () {
-    $action = new LogMessage();
+    $action = new LogMessage;
 
     expect($action->name())->toBe('Log Message');
     expect($action->type())->toBe('action');
@@ -22,7 +22,7 @@ it('has correct metadata', function () {
 });
 
 it('logs message to context', function () {
-    $action = new LogMessage();
+    $action = new LogMessage;
     $action->configure([
         'message' => 'Processing order',
         'level' => 'info',
@@ -39,7 +39,7 @@ it('logs message to context', function () {
 });
 
 it('supports different log levels', function () {
-    $action = new LogMessage();
+    $action = new LogMessage;
 
     $levels = ['debug', 'info', 'notice', 'warning', 'error', 'critical'];
 
@@ -60,7 +60,7 @@ it('supports different log levels', function () {
 });
 
 it('has fields configuration', function () {
-    $action = new LogMessage();
+    $action = new LogMessage;
     $fields = $action->fields();
 
     expect($fields)->not->toBeEmpty();

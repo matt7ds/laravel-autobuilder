@@ -12,7 +12,7 @@ beforeEach(function () {
 });
 
 it('has correct metadata', function () {
-    $action = new SetVariable();
+    $action = new SetVariable;
 
     expect($action->name())->toBe('Set Variable');
     expect($action->type())->toBe('action');
@@ -21,7 +21,7 @@ it('has correct metadata', function () {
 });
 
 it('can set a single variable', function () {
-    $action = new SetVariable();
+    $action = new SetVariable;
     $action->configure([
         'mode' => 'single',
         'variable_name' => 'result',
@@ -35,7 +35,7 @@ it('can set a single variable', function () {
 });
 
 it('can set multiple variables', function () {
-    $action = new SetVariable();
+    $action = new SetVariable;
     $action->configure([
         'mode' => 'multiple',
         'variables' => [
@@ -52,7 +52,7 @@ it('can set multiple variables', function () {
 });
 
 it('casts value to integer', function () {
-    $action = new SetVariable();
+    $action = new SetVariable;
     $action->configure([
         'mode' => 'single',
         'variable_name' => 'count',
@@ -67,7 +67,7 @@ it('casts value to integer', function () {
 });
 
 it('casts value to float', function () {
-    $action = new SetVariable();
+    $action = new SetVariable;
     $action->configure([
         'mode' => 'single',
         'variable_name' => 'price',
@@ -82,7 +82,7 @@ it('casts value to float', function () {
 });
 
 it('casts value to boolean', function () {
-    $action = new SetVariable();
+    $action = new SetVariable;
     $action->configure([
         'mode' => 'single',
         'variable_name' => 'active',
@@ -96,7 +96,7 @@ it('casts value to boolean', function () {
 });
 
 it('parses JSON value', function () {
-    $action = new SetVariable();
+    $action = new SetVariable;
     $action->configure([
         'mode' => 'single',
         'variable_name' => 'data',
@@ -110,7 +110,7 @@ it('parses JSON value', function () {
 });
 
 it('has fields configuration', function () {
-    $action = new SetVariable();
+    $action = new SetVariable;
     $fields = $action->fields();
 
     expect($fields)->not->toBeEmpty();

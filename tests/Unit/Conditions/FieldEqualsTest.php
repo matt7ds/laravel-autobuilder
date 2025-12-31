@@ -17,7 +17,7 @@ beforeEach(function () {
 });
 
 it('has correct metadata', function () {
-    $condition = new FieldEquals();
+    $condition = new FieldEquals;
 
     expect($condition->name())->toBe('Field Equals');
     expect($condition->type())->toBe('condition');
@@ -26,7 +26,7 @@ it('has correct metadata', function () {
 });
 
 it('returns true when field equals value (loose)', function () {
-    $condition = new FieldEquals();
+    $condition = new FieldEquals;
     $condition->configure([
         'field' => 'status',
         'value' => 'active',
@@ -37,7 +37,7 @@ it('returns true when field equals value (loose)', function () {
 });
 
 it('returns false when field does not equal value', function () {
-    $condition = new FieldEquals();
+    $condition = new FieldEquals;
     $condition->configure([
         'field' => 'status',
         'value' => 'inactive',
@@ -48,7 +48,7 @@ it('returns false when field does not equal value', function () {
 });
 
 it('supports nested field paths', function () {
-    $condition = new FieldEquals();
+    $condition = new FieldEquals;
     $condition->configure([
         'field' => 'user.role',
         'value' => 'admin',
@@ -59,7 +59,7 @@ it('supports nested field paths', function () {
 });
 
 it('supports strict comparison', function () {
-    $condition = new FieldEquals();
+    $condition = new FieldEquals;
     $condition->configure([
         'field' => 'count',
         'value' => '10', // String instead of int
@@ -78,7 +78,7 @@ it('supports strict comparison', function () {
 });
 
 it('has fields configuration', function () {
-    $condition = new FieldEquals();
+    $condition = new FieldEquals;
     $fields = $condition->fields();
 
     expect($fields)->toHaveCount(3);

@@ -24,8 +24,8 @@ class MakeBrickCommand extends Command
             return self::FAILURE;
         }
 
-        $directory = app_path('AutoBuilder/' . ucfirst($type) . 's');
-        $path = $directory . '/' . $name . '.php';
+        $directory = app_path('AutoBuilder/'.ucfirst($type).'s');
+        $path = $directory.'/'.$name.'.php';
 
         if (File::exists($path)) {
             $this->error("Brick already exists: {$path}");
@@ -38,7 +38,7 @@ class MakeBrickCommand extends Command
         $stub = $this->getStub($type);
         $content = str_replace(
             ['{{name}}', '{{namespace}}'],
-            [$name, 'App\\AutoBuilder\\' . ucfirst($type) . 's'],
+            [$name, 'App\\AutoBuilder\\'.ucfirst($type).'s'],
             $stub
         );
 

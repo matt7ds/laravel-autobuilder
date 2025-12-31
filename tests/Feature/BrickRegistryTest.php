@@ -2,13 +2,11 @@
 
 declare(strict_types=1);
 
+use Grazulex\AutoBuilder\Bricks\Action;
 use Grazulex\AutoBuilder\BuiltIn\Actions\LogMessage;
 use Grazulex\AutoBuilder\BuiltIn\Actions\SetVariable;
 use Grazulex\AutoBuilder\BuiltIn\Conditions\FieldEquals;
 use Grazulex\AutoBuilder\BuiltIn\Triggers\OnManualTrigger;
-use Grazulex\AutoBuilder\Bricks\Action;
-use Grazulex\AutoBuilder\Bricks\Condition;
-use Grazulex\AutoBuilder\Bricks\Trigger;
 use Grazulex\AutoBuilder\Registry\BrickRegistry;
 
 beforeEach(function () {

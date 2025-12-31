@@ -66,19 +66,19 @@ class BrickRegistry
     {
         // Register built-in bricks
         if (config('autobuilder.built_in.triggers', true)) {
-            $this->discoverInPath(__DIR__ . '/../BuiltIn/Triggers', 'Grazulex\\AutoBuilder\\BuiltIn\\Triggers');
+            $this->discoverInPath(__DIR__.'/../BuiltIn/Triggers', 'Grazulex\\AutoBuilder\\BuiltIn\\Triggers');
         }
 
         if (config('autobuilder.built_in.conditions', true)) {
-            $this->discoverInPath(__DIR__ . '/../BuiltIn/Conditions', 'Grazulex\\AutoBuilder\\BuiltIn\\Conditions');
+            $this->discoverInPath(__DIR__.'/../BuiltIn/Conditions', 'Grazulex\\AutoBuilder\\BuiltIn\\Conditions');
         }
 
         if (config('autobuilder.built_in.actions', true)) {
-            $this->discoverInPath(__DIR__ . '/../BuiltIn/Actions', 'Grazulex\\AutoBuilder\\BuiltIn\\Actions');
+            $this->discoverInPath(__DIR__.'/../BuiltIn/Actions', 'Grazulex\\AutoBuilder\\BuiltIn\\Actions');
         }
 
         if (config('autobuilder.built_in.gates', true)) {
-            $this->discoverInPath(__DIR__ . '/../BuiltIn/Gates', 'Grazulex\\AutoBuilder\\BuiltIn\\Gates');
+            $this->discoverInPath(__DIR__.'/../BuiltIn/Gates', 'Grazulex\\AutoBuilder\\BuiltIn\\Gates');
         }
 
         // Discover custom bricks
@@ -115,7 +115,7 @@ class BrickRegistry
                 $file->getRelativePathname()
             );
 
-            $class = $namespace . '\\' . $relativePath;
+            $class = $namespace.'\\'.$relativePath;
 
             if (class_exists($class)) {
                 $disabled = config('autobuilder.built_in.disabled', []);

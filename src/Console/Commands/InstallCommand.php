@@ -32,7 +32,7 @@ class InstallCommand extends Command
         }
 
         $this->info('AutoBuilder installed successfully!');
-        $this->info('Access the builder at: ' . url('/autobuilder'));
+        $this->info('Access the builder at: '.url('/autobuilder'));
 
         return self::SUCCESS;
     }
