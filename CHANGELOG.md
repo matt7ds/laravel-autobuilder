@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.0](https://github.com/Grazulex/laravel-autobuilder/releases/tag/v1.0.0) (2026-01-04)
+
+### Features
+
+- add rate limiting, health endpoints, authorization, and testing infrastructure ([4b75439](https://github.com/Grazulex/laravel-autobuilder/commit/4b7543990691f05a5ac90d1d8d97f6d0964d8cad))
+- initial release of Laravel AutoBuilder ([934df38](https://github.com/Grazulex/laravel-autobuilder/commit/934df38c69e35f4ccdb3925d8e1c895016493764))
+
+### Bug Fixes
+
+- **ci:** fix GitHub Actions workflows ([e1fd9ff](https://github.com/Grazulex/laravel-autobuilder/commit/e1fd9ff0ac0198d7fefc063ae3916bc80b1c948e))
+
+### Documentation
+
+- add call for testers and community feedback ([e78ec3b](https://github.com/Grazulex/laravel-autobuilder/commit/e78ec3bcfc644880a06a2b501096234112b7ab6d))
+
+### Chores
+
+- fix code style and drop Laravel 10 support ([35b442e](https://github.com/Grazulex/laravel-autobuilder/commit/35b442ec81617632fd9402bcace28da6b9f30987))
+- add GitHub workflows, funding, and standardize project files ([b632d8d](https://github.com/Grazulex/laravel-autobuilder/commit/b632d8d6f2ce3fd1aa1dd310b3a3df2de68ab3f1))
 ## [0.1.0](https://github.com/Grazulex/laravel-autobuilder/releases/tag/v0.1.0) (2025-12-30)
 
 ### Initial Release
