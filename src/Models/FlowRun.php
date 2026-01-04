@@ -14,6 +14,7 @@ class FlowRun extends Model
 {
     /** @use HasFactory<FlowRunFactory> */
     use HasFactory;
+
     use HasUlids;
 
     protected static function newFactory(): FlowRunFactory

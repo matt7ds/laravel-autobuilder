@@ -35,15 +35,15 @@ class TestUser extends Authenticatable
 
 describe('basic access', function () {
     it('allows authenticated user when no gate configured', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
 
         expect($policy->viewAny($user))->toBeTrue();
         expect($policy->create($user))->toBeTrue();
     });
 
     it('denies access to guest when no gate configured', function () {
-        $policy = new FlowPolicy();
+        $policy = new FlowPolicy;
 
         expect($policy->viewAny(null))->toBeFalse();
         expect($policy->create(null))->toBeFalse();
@@ -55,8 +55,8 @@ describe('basic access', function () {
         // Define the gate to allow access
         Gate::define('access-autobuilder', fn ($user) => true);
 
-        $policy = new FlowPolicy();
-        $user = new TestUser();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
 
         expect($policy->viewAny($user))->toBeTrue();
     });
@@ -67,8 +67,8 @@ describe('basic access', function () {
         // Define the gate to deny access
         Gate::define('access-autobuilder', fn ($user) => false);
 
-        $policy = new FlowPolicy();
-        $user = new TestUser();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
 
         expect($policy->viewAny($user))->toBeFalse();
     });
@@ -86,9 +86,9 @@ describe('super admin', function () {
         // Define gate to deny
         Gate::define('access-autobuilder', fn ($user) => false);
 
-        $policy = new FlowPolicy();
+        $policy = new FlowPolicy;
         $user = new TestUser(1);
-        $flow = new Flow();
+        $flow = new Flow;
 
         // Super admin should bypass all checks
         expect($policy->before($user, 'view'))->toBeTrue();
@@ -97,7 +97,7 @@ describe('super admin', function () {
     it('does not bypass for non-super-admin', function () {
         config(['autobuilder.authorization.super_admins' => [999]]);
 
-        $policy = new FlowPolicy();
+        $policy = new FlowPolicy;
         $user = new TestUser(1);
 
         // Regular user returns null to continue with normal checks
@@ -111,25 +111,25 @@ describe('super admin', function () {
 
 describe('crud methods', function () {
     it('has view policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
-        $flow = new Flow();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
+        $flow = new Flow;
 
         expect($policy->view($user, $flow))->toBeTrue();
     });
 
     it('has update policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
-        $flow = new Flow();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
+        $flow = new Flow;
 
         expect($policy->update($user, $flow))->toBeTrue();
     });
 
     it('has delete policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
-        $flow = new Flow();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
+        $flow = new Flow;
 
         expect($policy->delete($user, $flow))->toBeTrue();
     });
@@ -141,48 +141,48 @@ describe('crud methods', function () {
 
 describe('flow-specific methods', function () {
     it('has duplicate policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
-        $flow = new Flow();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
+        $flow = new Flow;
 
         expect($policy->duplicate($user, $flow))->toBeTrue();
     });
 
     it('has activate policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
-        $flow = new Flow();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
+        $flow = new Flow;
 
         expect($policy->activate($user, $flow))->toBeTrue();
     });
 
     it('has deactivate policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
-        $flow = new Flow();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
+        $flow = new Flow;
 
         expect($policy->deactivate($user, $flow))->toBeTrue();
     });
 
     it('has run policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
-        $flow = new Flow();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
+        $flow = new Flow;
 
         expect($policy->run($user, $flow))->toBeTrue();
     });
 
     it('has export policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
-        $flow = new Flow();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
+        $flow = new Flow;
 
         expect($policy->export($user, $flow))->toBeTrue();
     });
 
     it('has import policy method', function () {
-        $policy = new FlowPolicy();
-        $user = new TestUser();
+        $policy = new FlowPolicy;
+        $user = new TestUser;
 
         expect($policy->import($user))->toBeTrue();
     });

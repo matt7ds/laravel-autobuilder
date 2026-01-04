@@ -13,7 +13,7 @@ beforeEach(function () {
     $this->registry->discover();
 
     // Create test table
-    if (!Schema::hasTable('test_posts')) {
+    if (! Schema::hasTable('test_posts')) {
         Schema::create('test_posts', function ($table) {
             $table->id();
             $table->string('title');

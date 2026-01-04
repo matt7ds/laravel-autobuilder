@@ -204,6 +204,7 @@ describe('variable resolution', function () {
 
         Http::assertSent(function ($request) {
             $body = $request->body();
+
             return str_contains($body, 'John Doe') && str_contains($body, 'john@example.com');
         });
     });
@@ -332,6 +333,7 @@ describe('body format', function () {
 
         Http::assertSent(function ($request) {
             $contentType = $request->header('Content-Type')[0] ?? '';
+
             return str_contains($contentType, 'application/x-www-form-urlencoded');
         });
     });

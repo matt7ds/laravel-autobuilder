@@ -102,7 +102,7 @@ class UpdateModel extends Action
 
         // Check if model has proper mass assignment protection
         if (! $this->hasMassAssignmentProtection($model)) {
-            $context->log('warning', "UpdateModel: Model has no mass assignment protection. Consider adding \$fillable or \$guarded.");
+            $context->log('warning', 'UpdateModel: Model has no mass assignment protection. Consider adding $fillable or $guarded.');
         }
 
         // Filter attributes to only fillable ones for safety

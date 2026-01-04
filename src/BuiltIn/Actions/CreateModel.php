@@ -79,7 +79,7 @@ class CreateModel extends Action
 
         // Create model instance and check mass assignment protection
         /** @var Model $model */
-        $model = new $modelClass();
+        $model = new $modelClass;
 
         // Check if model has proper mass assignment protection
         if (! $this->hasMassAssignmentProtection($model)) {

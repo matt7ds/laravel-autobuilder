@@ -5,8 +5,6 @@ declare(strict_types=1);
 use Grazulex\AutoBuilder\BuiltIn\Actions\SendNotification;
 use Grazulex\AutoBuilder\Flow\FlowContext;
 use Grazulex\AutoBuilder\Registry\BrickRegistry;
-use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Notification as NotificationFacade;
 
 beforeEach(function () {
     $this->registry = app(BrickRegistry::class);
@@ -80,7 +78,7 @@ describe('error handling', function () {
         ]);
 
         $context = new FlowContext('flow-1');
-        $context->set('user', new stdClass());
+        $context->set('user', new stdClass);
 
         $result = $brick->handle($context);
 

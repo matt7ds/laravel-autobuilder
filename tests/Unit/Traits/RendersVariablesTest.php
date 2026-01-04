@@ -33,7 +33,7 @@ class RendersVariablesTestClass
 }
 
 beforeEach(function () {
-    $this->renderer = new RendersVariablesTestClass();
+    $this->renderer = new RendersVariablesTestClass;
 });
 
 // =============================================================================

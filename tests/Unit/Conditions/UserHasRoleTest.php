@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Grazulex\AutoBuilder\BuiltIn\Conditions\UserHasRole;
 use Grazulex\AutoBuilder\Flow\FlowContext;
 use Grazulex\AutoBuilder\Registry\BrickRegistry;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 beforeEach(function () {

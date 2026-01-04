@@ -39,7 +39,7 @@ describe('empty flow validation', function () {
     });
 
     it('returns error for flow with null nodes', function () {
-        $flow = new Flow();
+        $flow = new Flow;
         $flow->name = 'Null Nodes Flow';
         $flow->nodes = null;
         $flow->edges = [];

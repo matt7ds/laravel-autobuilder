@@ -16,6 +16,7 @@ class Flow extends Model
 {
     /** @use HasFactory<FlowFactory> */
     use HasFactory;
+
     use HasUlids;
     use SoftDeletes;
 
