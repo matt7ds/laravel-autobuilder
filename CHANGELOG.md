@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [1.0.2](https://github.com/Grazulex/laravel-autobuilder/releases/tag/v1.0.2) (2026-01-08)
+
+### Bug Fixes
+
+- include critical node/edge data in flow request validators ([573931b](https://github.com/Grazulex/laravel-autobuilder/commit/573931b6d28c3526ba02c045e56051a918663e30))
 ## [1.0.1](https://github.com/Grazulex/laravel-autobuilder/releases/tag/v1.0.1) (2026-01-05)
 
 ### Bug Fixes
